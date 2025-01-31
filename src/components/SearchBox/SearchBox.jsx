@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import s from "./Search.module.css";
 import { useDispatch } from "react-redux";
-import { changeFilter } from "../../redux/filtersSlice";
+import { changeFilter } from "../../redux/filters/slice";
 
 const SearchBox = () => {
   const dispatch = useDispatch();

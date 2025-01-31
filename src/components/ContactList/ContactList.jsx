@@ -4,17 +4,10 @@ import {
   selectError,
   selectFilteredContacts,
   selectLoading,
-} from "../../redux/contactsSlice";
-// import { useEffect } from "react";
-// import { fetchContacts } from "../../App";
+} from "../../redux/contacts/selectors";
 
 const ContactList = () => {
-  // const dispatch = useDispatch();
   const filteredContact = useSelector(selectFilteredContacts);
-
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
 
   const isError = useSelector(selectError);
   const isLoading = useSelector(selectLoading);
