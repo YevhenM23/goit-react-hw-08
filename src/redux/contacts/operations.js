@@ -1,11 +1,23 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { goitApi } from "../auth/operations";
+
+axios.defaults.baseURL = "https://connections-api.goit.global";
+// axios.defaults.baseURL = "https://678fdd0f49875e5a1a93a664.mockapi.io";
 
 export const fetchContacts = createAsyncThunk(
   "contacts/fetchAll",
   async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.auth.token;
+
+    if (!token) {
+      return thunkAPI.rejectWithValue("No auth token provided");
+    }
     try {
-      const { data } = await axios.get("/contacts");
+      const { data } = await goitApi.get("/contacts");
+      console.log(data);
+
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -17,8 +29,8 @@ export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
   async (id, thunkAPI) => {
     try {
-      const { data } = await axios.delete(`/contacts/${id}`);
-      return data;
+      await goitApi.delete(`/contacts/${id}`);
+      thunkAPI.dispatch(fetchContacts());
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -29,7 +41,7 @@ export const addContact = createAsyncThunk(
   "contacts/addContact",
   async (body, thunkAPI) => {
     try {
-      const { data } = await axios.post("contacts", body);
+      const { data } = await goitApi.post("/contacts", body);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -39,10 +51,10 @@ export const addContact = createAsyncThunk(
 
 export const selectContact = createAsyncThunk(
   "contacts/selectContact",
-  async (body, thunkAPI) => {
+  async ({ id, body }, thunkAPI) => {
     try {
-      const { data } = await axios.post("contacts", body);
-      return data;
+      await goitApi.patch(`/contacts/${id}`, body);
+      thunkAPI.dispatch(fetchContacts());
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

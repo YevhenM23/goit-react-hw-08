@@ -13,6 +13,7 @@ const contactsReducer = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchContacts.fulfilled, (state, action) => {
+        console.log("Fetched contacts:", action.payload);
         state.items = action.payload;
         state.loading = false;
       })

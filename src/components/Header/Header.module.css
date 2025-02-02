@@ -1,0 +1,51 @@
+.header {
+  background-color: #282c34;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.headerNav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.headerNav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.headerNav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.headerWelcome {
+  color: #61dafb;
+  font-size: 18px;
+}
+
+.headerLogout {
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.headerLogout:hover {
+  background-color: #ff1f3d;
+}

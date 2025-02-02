@@ -1,0 +1,63 @@
+.regWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 300px;
+  background-color: #f4f4f4;
+}
+
+.regFormik {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.regForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.regLabel {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.regSpan {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.regField {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.regField:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.regBtn {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.regBtn:hover {
+  background-color: #218838;
+}

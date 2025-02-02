@@ -8,9 +8,20 @@ import {
 
 const ContactList = () => {
   const filteredContact = useSelector(selectFilteredContacts);
-
   const isError = useSelector(selectError);
   const isLoading = useSelector(selectLoading);
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (isError) {
+    return <h2>Something went wrong. No Contacts found.</h2>;
+  }
+
+  if (filteredContact.length === 0) {
+    return <h2>No contacts available.</h2>;
+  }
 
   return (
     <ul>
@@ -19,8 +30,6 @@ const ContactList = () => {
           <Contact contact={contact} />
         </li>
       ))}
-      {isError && <h2>Something went wrong.No Contacts found.</h2>}
-      {isLoading && <h2>Loading...</h2>}
     </ul>
   );
 };
