@@ -1,0 +1,38 @@
+.headerNavigate {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background-color: #2c3e50;
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+
+.headerNavigate a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.headerHome {
+  color: #ecf0f1;
+}
+
+.headerRegister {
+  color: #f39c12;
+}
+
+.headerLogin {
+  color: #e74c3c;
+}
+
+.headerNavigate a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.headerNavigate a.active {
+  background-color: #1abc9c;
+  color: #fff;
+}

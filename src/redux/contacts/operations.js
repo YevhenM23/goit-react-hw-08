@@ -60,3 +60,15 @@ export const selectContact = createAsyncThunk(
     }
   }
 );
+
+export const logoutThunk = createAsyncThunk(
+  "auth/logout",
+  async (_, thunkApi) => {
+    try {
+      const { data } = await goitApi.post("/users/logout");
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

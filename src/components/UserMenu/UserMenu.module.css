@@ -1,0 +1,28 @@
+.userMenuContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #34495e;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-right: 50px;
+}
+
+.headerWelcome {
+  color: #61dafb;
+  font-size: 18px;
+}
+
+.headerLogout {
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.headerLogout:hover {
+  background-color: #ff1f3d;
+}

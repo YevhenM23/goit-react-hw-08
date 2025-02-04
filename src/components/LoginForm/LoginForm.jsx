@@ -3,9 +3,9 @@ import { Form } from "formik";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "../../redux/auth/operations";
 import { Link, useNavigate } from "react-router-dom";
-import s from "./Login.module.css";
+import s from "./LoginForm.module.css";
 
-const Login = () => {
+const LoginForm = () => {
   const initialValues = {
     email: "",
     password: "",
@@ -51,4 +51,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
